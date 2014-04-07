@@ -44,6 +44,13 @@
 		</dependency>
 	</dependencies>
 
+	<scm>
+		<connection>scm:git:git://github.com/fiji/register_virtual_stack_slices</connection>
+		<developerConnection>scm:git:git@github.com:fiji/register_virtual_stack_slices</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/fiji/register_virtual_stack_slices</url>
+	</scm>
+
 	<repositories>
 		<!-- NB: for project parent, in case of partial checkout -->
 		<repository>
