@@ -44,6 +44,11 @@
 		</dependency>
 	</dependencies>
 
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.imagej.net/job/register_virtual_stack_slices/</url>
+	</ciManagement>
+
 	<scm>
 		<connection>scm:git:git://github.com/fiji/register_virtual_stack_slices</connection>
 		<developerConnection>scm:git:git@github.com:fiji/register_virtual_stack_slices</developerConnection>
