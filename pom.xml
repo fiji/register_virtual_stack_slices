@@ -64,6 +64,4 @@
 			<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
 		</repository>
 	</repositories>
-
-	<version>2.0.0-SNAPSHOT</version>
 </project>
