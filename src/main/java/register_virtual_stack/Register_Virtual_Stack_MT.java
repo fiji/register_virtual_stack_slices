@@ -5,25 +5,21 @@ package register_virtual_stack;
  * This work released under the terms of the General Public License in its latest edition. 
  * */
 
+import bunwarpj.Transformation;
+import bunwarpj.bUnwarpJ_;
+import bunwarpj.trakem2.transform.CubicBSplineTransform;
 import fiji.util.gui.GenericDialogPlus;
 import ij.IJ;
+import ij.ImagePlus;
+import ij.VirtualStack;
 import ij.gui.GenericDialog;
 import ij.gui.Plot;
-import ij.plugin.PlugIn;
-import ij.VirtualStack;
-import ij.ImagePlus;
-import ij.process.ByteProcessor;
-import ij.process.ImageProcessor;
 import ij.io.FileSaver;
 import ij.io.OpenDialog;
+import ij.plugin.PlugIn;
+import ij.process.ByteProcessor;
+import ij.process.ImageProcessor;
 
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.TextField;
@@ -31,20 +27,29 @@ import java.awt.geom.AffineTransform;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+import javax.swing.JFileChooser;
 
 import mpicbg.ij.FeatureTransform;
 import mpicbg.ij.SIFT;
 import mpicbg.ij.util.Util;
-import mpicbg.imagefeatures.*;
-
-
+import mpicbg.imagefeatures.Feature;
+import mpicbg.imagefeatures.FloatArray2DSIFT;
 import mpicbg.models.Model;
 import mpicbg.models.NotEnoughDataPointsException;
 import mpicbg.models.Point;
 import mpicbg.models.PointMatch;
-
-
-
 import mpicbg.trakem2.transform.AffineModel2D;
 import mpicbg.trakem2.transform.CoordinateTransform;
 import mpicbg.trakem2.transform.CoordinateTransformList;
@@ -54,18 +59,6 @@ import mpicbg.trakem2.transform.SimilarityModel2D;
 import mpicbg.trakem2.transform.TransformMesh;
 import mpicbg.trakem2.transform.TransformMeshMapping;
 import mpicbg.trakem2.transform.TranslationModel2D;
-
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.Callable;
-
-import javax.swing.JFileChooser;
-
-import bunwarpj.Transformation;
-import bunwarpj.bUnwarpJ_;
-import bunwarpj.trakem2.transform.CubicBSplineTransform;
 
 /** 
  * Fiji plugin to register sequences of images in a concurrent (multi-thread) way.

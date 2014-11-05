@@ -5,6 +5,10 @@ package register_virtual_stack;
  * This work released under the terms of the General Public License in its latest edition. 
  * */
 
+import fiji.util.gui.GenericDialogPlus;
+import ij.IJ;
+import ij.plugin.PlugIn;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,13 +17,8 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Arrays;
 
-import fiji.util.gui.GenericDialogPlus;
-
 import mpicbg.trakem2.transform.CoordinateTransform;
 import mpicbg.trakem2.transform.CoordinateTransformList;
-
-import ij.IJ;
-import ij.plugin.PlugIn;
 
 /** 
  * Fiji plugin to transform sequences of images in a concurrent (multi-thread) way.
