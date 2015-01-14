@@ -42,25 +42,30 @@
 	</repositories>
 
 	<dependencies>
+		<!-- TrakEM2 dependencies -->
 		<dependency>
 			<groupId>sc.fiji</groupId>
-			<artifactId>fiji-lib</artifactId>
+			<artifactId>TrakEM2_</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>net.imagej</groupId>
-			<artifactId>ij</artifactId>
-		</dependency>
+
+		<!-- Fiji dependencies -->
 		<dependency>
 			<groupId>mpicbg</groupId>
 			<artifactId>mpicbg</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>sc.fiji</groupId>
-			<artifactId>TrakEM2_</artifactId>
+			<artifactId>bUnwarpJ_</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>sc.fiji</groupId>
-			<artifactId>bUnwarpJ_</artifactId>
+			<artifactId>fiji-lib</artifactId>
+		</dependency>
+
+		<!-- ImageJ dependencies -->
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>ij</artifactId>
 		</dependency>
 	</dependencies>
 
