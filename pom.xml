@@ -47,10 +47,10 @@
 	</ciManagement>
 
 	<scm>
-		<connection>scm:git:git://github.com/fiji/register_virtual_stack_slices</connection>
-		<developerConnection>scm:git:git@github.com:fiji/register_virtual_stack_slices</developerConnection>
+		<connection>scm:git:git://github.com/trakem2/register_virtual_stack_slices</connection>
+		<developerConnection>scm:git:git@github.com:trakem2/register_virtual_stack_slices</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/fiji/register_virtual_stack_slices</url>
+		<url>https://github.com/trakem2/register_virtual_stack_slices</url>
 	</scm>
 
 	<repositories>
