@@ -32,10 +32,6 @@
 			<id>imagej.public</id>
 			<url>http://maven.imagej.net/content/groups/public</url>
 		</repository>
-		<repository>
-			<id>JBoss 3rdparty</id>
-			<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
-		</repository>
 	</repositories>
 
 	<dependencies>
