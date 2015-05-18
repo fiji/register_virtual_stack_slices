@@ -39,6 +39,10 @@
 			<groupId>sc.fiji</groupId>
 			<artifactId>bUnwarpJ_</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>IO_</artifactId>
+		</dependency>
 	</dependencies>
 
 	<ciManagement>

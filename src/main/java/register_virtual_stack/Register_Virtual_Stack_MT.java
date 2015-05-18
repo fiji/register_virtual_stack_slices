@@ -16,6 +16,7 @@ import ij.process.ByteProcessor;
 import ij.process.ImageProcessor;
 import ij.io.FileSaver;
 import ij.io.OpenDialog;
+import io.DM3_Reader;
 
 
 import java.util.ArrayList;
@@ -366,7 +367,7 @@ public class Register_Virtual_Stack_MT implements PlugIn
 		
 		
 		// get file listing
-		final String exts = ".tif.jpg.png.gif.tiff.jpeg.bmp.pgm.ima";
+		final String exts = ".tif.jpg.png.gif.tiff.jpeg.bmp.pgm.ima.dm3";
 		final String[] names = new File(source_dir).list(new FilenameFilter() 
 		{
 			public boolean accept(File dir, String name) 
@@ -1505,7 +1506,15 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			public ArrayList<Feature> call() 
 			{
 				
-				ImagePlus imp = IJ.openImage(path);
+				ImagePlus imp;
+				if( path.toLowerCase().endsWith(".md3") )
+				{
+					DM3_Reader reader = new DM3_Reader();
+					File f = new File( path );
+					imp = reader.load( f.getParent(), f.getName() );
+				}
+				else
+					imp = IJ.openImage(path);
 				centerX[index] = imp.getWidth() / 2;
 				centerY[index] = imp.getHeight() / 2;
 				ArrayList<Feature> fs = new ArrayList<Feature>();
