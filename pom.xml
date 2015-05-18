@@ -15,6 +15,23 @@
 	<name>plugins/register_virtual_stack_slices.jar</name>
 	<description />
 
+	<developers>
+		<developer>
+			<id>iarganda</id>
+			<name>Ignacio Arganda-Carreras</name>
+			<email>ignacio.arganda@gmail.com</email>
+			<url>http://biocomp.cnb.csic.es/~iarganda/index_EN.html</url>
+			<organization>INRA</organization>
+			<organizationUrl>http://www-ijpb.versailles.inra.fr/en/bc/equipes/modelisation-imagerie/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+				<role>maintainer</role>
+			</roles>
+			<timezone>-6</timezone>
+		</developer>
+	</developers>
+
 	<scm>
 		<connection>scm:git:git://github.com/trakem2/register_virtual_stack_slices</connection>
 		<developerConnection>scm:git:git@github.com:trakem2/register_virtual_stack_slices</developerConnection>
