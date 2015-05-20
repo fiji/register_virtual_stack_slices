@@ -1501,7 +1501,7 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			{
 				
 				ImagePlus imp;
-				if( path.toLowerCase().endsWith(".md3") )
+				if( path.toLowerCase().endsWith(".dm3") )
 				{
 					DM3_Reader reader = new DM3_Reader();
 					File f = new File( path );
