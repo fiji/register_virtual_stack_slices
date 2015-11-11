@@ -1076,8 +1076,10 @@ public class Register_Virtual_Stack_MT implements PlugIn
 		names.clear();
 		exe.shutdown();
 
-		// Show registered stack
-		new ImagePlus("Registered " + new File(source_dir).getName(), stack).show();
+		// Show registered stack (if not in headless mode)
+		if( IJ.getInstance() != null )
+			new ImagePlus( "Registered " + 
+							new File(source_dir).getName(), stack).show();
 		
 		// Save transforms
 		if(save_dir != null)
@@ -1345,8 +1347,10 @@ public class Register_Virtual_Stack_MT implements PlugIn
 				saveTransforms(transform, save_dir, sorted_file_names);			
 			}
 
-			// Show registered stack
-			new ImagePlus("Registered " + new File(source_dir).getName(), stack).show();
+			// Show registered stack (if not in headless mode)
+			if( IJ.getInstance() != null )
+				new ImagePlus( "Registered " 
+								+ new File(source_dir).getName(), stack).show();
 
 			IJ.showStatus("Done!");
 
