@@ -38,6 +38,10 @@
 		<tag>HEAD</tag>
 		<url>https://github.com/fiji/register_virtual_stack_slices</url>
 	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/fiji/register_virtual_stack_slices/issues</url>
+	</issueManagement>
 	<ciManagement>
 		<system>Jenkins</system>
 		<url>http://jenkins.imagej.net/job/register_virtual_stack_slices/</url>
