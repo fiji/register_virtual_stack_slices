@@ -118,14 +118,14 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 			final String transf_dir) 
 	{
 		// Get source file listing
-		final String exts = ".tif.jpg.png.gif.tiff.jpeg.bmp.pgm";
 		final String[] src_names = new File(source_dir).list(new FilenameFilter() 
 		{
 			public boolean accept(File dir, String name) 
 			{
 				int idot = name.lastIndexOf('.');
 				if (-1 == idot) return false;
-				return exts.contains(name.substring(idot).toLowerCase());
+				return Register_Virtual_Stack_MT.exts.contains( 
+						name.substring( idot ).toLowerCase() );
 			}
 		});
 		Arrays.sort(src_names);
@@ -248,15 +248,15 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 			final String transf_dir,
 			final boolean interpolate) 
 	{
-		// Get source file listing
-		final String exts = ".tif.jpg.png.gif.tiff.jpeg.bmp.pgm";
+		// Get source file listing		
 		final String[] src_names = new File(source_dir).list(new FilenameFilter() 
 		{
 			public boolean accept(File dir, String name) 
 			{
 				int idot = name.lastIndexOf('.');
 				if (-1 == idot) return false;
-				return exts.contains(name.substring(idot).toLowerCase());
+				return Register_Virtual_Stack_MT.exts.contains( 
+						name.substring( idot ).toLowerCase() );
 			}
 		});
 		Arrays.sort(src_names);

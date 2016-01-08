@@ -162,6 +162,9 @@ public class Register_Virtual_Stack_MT implements PlugIn
 	/** maximum number of iterations in the relaxation loop */
 	public static final int MAX_ITER = 300;
 
+	/** possible extensions of files to be registered/transformed */
+	public static final String exts = 
+			".tif.jpg.png.gif.tiff.jpeg.bmp.pgm.ima.dm3";
 
 	//---------------------------------------------------------------------------------
 	/**
@@ -361,8 +364,7 @@ public class Register_Virtual_Stack_MT implements PlugIn
 		}
 		
 		
-		// get file listing
-		final String exts = ".tif.jpg.png.gif.tiff.jpeg.bmp.pgm.ima.dm3";
+		// get file listing		
 		final String[] names = new File(source_dir).list(new FilenameFilter() 
 		{
 			public boolean accept(File dir, String name) 
