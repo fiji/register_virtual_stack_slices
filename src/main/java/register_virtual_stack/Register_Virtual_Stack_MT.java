@@ -11,6 +11,7 @@ import bunwarpj.trakem2.transform.CubicBSplineTransform;
 import fiji.util.gui.GenericDialogPlus;
 import ij.IJ;
 import ij.ImagePlus;
+import ij.Prefs;
 import ij.VirtualStack;
 import ij.gui.GenericDialog;
 import ij.gui.Plot;
@@ -540,7 +541,8 @@ public class Register_Virtual_Stack_MT implements PlugIn
 		}
 		
 		// Executor service to run concurrent tasks
-		ExecutorService exe = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		ExecutorService exe = 
+				Executors.newFixedThreadPool( Prefs.getThreads() );
 		
 		// Select features model to select the correspondences in every image
 		Model< ? > featuresModel;
@@ -600,7 +602,7 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			exe.shutdown();
 			
 			// Match features				
-			exe = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+			exe = Executors.newFixedThreadPool( Prefs.getThreads() );
 			final Future<ArrayList<PointMatch>>[] fpm = new Future[sorted_file_names.length-1];
 			// Loop over the sequence to select correspondences by pairs			
 			for (int i=1; i<sorted_file_names.length; i++) 
@@ -936,7 +938,8 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			final CoordinateTransform[] transform,
 			final boolean interpolate) 
 	{
-		ExecutorService exe = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		ExecutorService exe = 
+				Executors.newFixedThreadPool( Prefs.getThreads() );
 		final ImagePlus first = IJ.openImage(source_dir + sorted_file_names[0]);
 		
 		// Common bounds to create common frame for all images
@@ -1037,7 +1040,7 @@ public class Register_Virtual_Stack_MT implements PlugIn
 		}
 
 		// Reopen all target images and repaint them on an enlarged canvas
-		exe = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		exe = Executors.newFixedThreadPool( Prefs.getThreads() );
 		IJ.showStatus("Resizing images...");
 		ArrayList<Future<String>> names = new ArrayList<Future<String>>();
 		for (int i=0; i<sorted_file_names.length; i++) 
@@ -1106,7 +1109,8 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			String save_dir, 
 			String[] sorted_file_names) 
 	{
-		final ExecutorService exe = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		final ExecutorService exe = 
+				Executors.newFixedThreadPool( Prefs.getThreads() );
 		final Future<String>[] jobs = new Future[transform.length];
 		
 		for(int i = 0; i < transform.length; i ++)
@@ -1172,7 +1176,8 @@ public class Register_Virtual_Stack_MT implements PlugIn
 		}
 				
 		// Executor service to produce concurrent threads
-		final ExecutorService exe = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		final ExecutorService exe = 
+				Executors.newFixedThreadPool( Prefs.getThreads() );
 
 		try {			
 
