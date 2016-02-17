@@ -271,7 +271,7 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 	 * @param filename complete file name (including path)
 	 * @return true if the coordinate transform was properly read, false otherwise.
 	 */
-	static CoordinateTransform readCoordTransform(String filename) 
+	public static CoordinateTransform readCoordTransform( String filename )
 	{
 		final CoordinateTransformList<CoordinateTransform> ctl = new CoordinateTransformList<CoordinateTransform>();
 		try 
