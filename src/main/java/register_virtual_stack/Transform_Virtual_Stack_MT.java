@@ -268,7 +268,8 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 	//---------------------------------------------------------------------------------
 	/**
 	 * Read coordinate transform from file (generated in Register_Virtual_Stack)
-	 * @param filename complete file name (including path)
+	 *
+	 * @param filename  complete file name (including path)
 	 * @return true if the coordinate transform was properly read, false otherwise.
 	 */
 	public static CoordinateTransform readCoordTransform( String filename )
