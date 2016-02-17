@@ -1261,7 +1261,7 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			
 			// Adjust transforms to the right position.
 			// Since the transforms are relative to the previous image, we have 
-			// the images to translate them to the origin of the previous image. 
+			// to translate them to the origin of the previous image. 
 			for(int i = 1, j = referenceIndex+1 ; i < boundsFor.size(); i++, j++)
 			{
 				final Rectangle b = boundsFor.get(i-1);
