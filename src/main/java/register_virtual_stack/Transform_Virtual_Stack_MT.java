@@ -308,6 +308,95 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 	
 	//---------------------------------------------------------------------------------
 	/**
+	 * Transform range of images in the source directory applying transform
+	 * files from a specific directory.
+	 *
+	 * @param source_dir folder with input (source) images.
+	 * @param target_dir folder to store output (transformed) images.
+	 * @param transf_dir folder with transform files.
+	 * @param interpolate boolean flag to interpolate the results or not
+	 * @return true for correct execution, false otherwise.
+	 */
+	public static boolean exec(
+			final String source_dir,
+			final String target_dir,
+			final String transf_dir,
+			final int first,
+			final int last,
+			final boolean interpolate )
+	{
+		// Get source file listing
+		String[] src_names = new File(source_dir).list(new FilenameFilter()
+		{
+			public boolean accept(File dir, String name)
+			{
+				int idot = name.lastIndexOf('.');
+				if (-1 == idot) return false;
+				return Register_Virtual_Stack_MT.exts.contains(
+						name.substring( idot ).toLowerCase() );
+			}
+		});
+		Arrays.sort(src_names);
+
+		// Get transform file listing
+		final String ext_xml = ".xml";
+		final String[] transf_names = new File( transf_dir ).list(
+				new FilenameFilter()
+		{
+			public boolean accept(File dir, String name)
+			{
+				int idot = name.lastIndexOf('.');
+				if (-1 == idot) return false;
+				return ext_xml.contains(name.substring(idot).toLowerCase());
+			}
+		});
+		Arrays.sort(transf_names);
+
+		// Check the number of input (source) files and transforms.
+		if(transf_names.length != src_names.length)
+		{
+			IJ.error("The number of source and transform files must be equal!");
+			return false;
+		}
+
+		if( first < 0 || first > last || last >= src_names.length )
+		{
+			IJ.log( "Error: wrong indexes ("+ first + "<->" + last+")" );
+			return false;
+		}
+
+		// Read transforms
+		CoordinateTransform[] transform = new CoordinateTransform[transf_names.length];
+		for(int i = 0; i < transf_names.length; i ++)
+		{
+			transform[i] = readCoordTransform(transf_dir + transf_names[i]);
+			if(transform[i] == null)
+			{
+				IJ.error("Error when reading transform from file: "
+							+ transf_dir + transf_names[i]);
+				return false;
+			}
+		}
+
+		// Create sub-lists based on the indexes
+		src_names = Arrays.copyOfRange( src_names, first, last );
+		transform = Arrays.copyOfRange( transform, first, last );
+
+		// Create transformed images
+		IJ.showStatus("Calculating transformed images...");
+		if( Register_Virtual_Stack_MT.createResults( source_dir, src_names,
+				target_dir, null, transform, interpolate ) == false )
+		{
+			IJ.log("Error when creating transformed images");
+			return false;
+		}
+
+		return true;
+	}
+
+
+	//---------------------------------------------------------------------------------
+	/**
 	 * Read coordinate transform from file (generated in Register_Virtual_Stack)
 	 * @param filename complete file name (including path)
 	 * @return true if the coordinate transform was properly read, false otherwise.
