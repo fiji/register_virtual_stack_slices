@@ -7,8 +7,11 @@ package register_virtual_stack;
 
 import fiji.util.gui.GenericDialogPlus;
 import ij.IJ;
+import ij.ImagePlus;
 import ij.plugin.PlugIn;
+import ij.process.ImageProcessor;
 
+import java.awt.Rectangle;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,6 +22,8 @@ import java.util.Arrays;
 
 import mpicbg.trakem2.transform.CoordinateTransform;
 import mpicbg.trakem2.transform.CoordinateTransformList;
+import mpicbg.trakem2.transform.TransformMesh;
+import mpicbg.trakem2.transform.TransformMeshMapping;
 
 /** 
  * Fiji plugin to transform sequences of images in a concurrent (multi-thread) way.
@@ -323,6 +328,50 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 		return ctl;
 	}
 
+	/**
+	 * Apply a coordinate transform to a given image
+	 *
+	 * @param imp  image to be transformed
+	 * @param transform  transform to be applied
+	 * @param meshResolution  number of vertices per row in transform mesh
+	 * @param interpolate  flag to interpolate pixel values
+	 * @param worldOrigin  image world origin coordinates after transform
+	 * @return transformed image
+	 */
+	public static ImagePlus applyCoordinateTransform(
+			final ImagePlus imp,
+			final CoordinateTransform transform,
+			final int meshResolution,
+			final boolean interpolate,
+			int[] worldOrigin )
+	{
+		if( null == imp || null == transform || null == worldOrigin )
+		{
+			IJ.error("Error: missing parameter! An image, a coordinate"
+					+ " transform and a rectangle (to store world info) "
+					+ "are needed.");
+			return null;
+		}
+		// Calculate transform mesh
+		TransformMesh mesh =
+				new TransformMesh( transform, meshResolution,
+						imp.getWidth(), imp.getHeight() );
+		TransformMeshMapping mapping = new TransformMeshMapping( mesh );
+
+		// Store world origin after transform
+		Rectangle worldBounds = mesh.getBoundingBox();
+		worldOrigin[ 0 ] = worldBounds.x;
+		worldOrigin[ 1 ] = worldBounds.y;
+
+		// Create interpolated deformed image with black background
+		imp.getProcessor().setValue( 0 );
+		final ImageProcessor ip2 = interpolate ?
+				mapping.createMappedImageInterpolated( imp.getProcessor() ) :
+				mapping.createMappedImage( imp.getProcessor() );
+		final ImagePlus result = new ImagePlus( imp.getTitle(), ip2 );
+		result.setCalibration( imp.getCalibration() );
+		return result;
+	}
 	
 	
 }// end class Register_Virtual_Stack_MT
