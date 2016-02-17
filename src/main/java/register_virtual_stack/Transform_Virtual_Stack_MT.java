@@ -155,7 +155,7 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 		CoordinateTransform[] transform = new CoordinateTransform[transf_names.length];
 		for(int i = 0; i < transf_names.length; i ++)
 		{
-			transform[i] = readCoordTransform(transf_dir + transf_names[i]);
+			transform[i] = readCoordinateTransform(transf_dir + transf_names[i]);
 			if(transform[i] == null)
 			{
 				IJ.error("Error when reading transform from file: " + transf_dir + transf_names[i]);
@@ -239,7 +239,7 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 		CoordinateTransform[] transform = new CoordinateTransform[transf_names.length];
 		for(int i = 0; i < transf_names.length; i ++)
 		{
-			transform[i] = readCoordTransform(transf_dir + transf_names[i]);
+			transform[i] = readCoordinateTransform(transf_dir + transf_names[i]);
 			if(transform[i] == null)
 			{
 				IJ.error("Error when reading transform from file: "
@@ -272,7 +272,7 @@ public class Transform_Virtual_Stack_MT implements PlugIn
 	 * @param filename  complete file name (including path)
 	 * @return true if the coordinate transform was properly read, false otherwise.
 	 */
-	public static CoordinateTransform readCoordTransform( String filename )
+	public static CoordinateTransform readCoordinateTransform( String filename )
 	{
 		final CoordinateTransformList<CoordinateTransform> ctl = new CoordinateTransformList<CoordinateTransform>();
 		try 
