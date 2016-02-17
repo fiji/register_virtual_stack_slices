@@ -37,7 +37,6 @@ import mpicbg.trakem2.transform.CoordinateTransformList;
  * <p>
  * <A target="_blank" href="http://fiji.sc/wiki/Transform_Virtual_Stack_Slices">http://fiji.sc/wiki/Transform_Virtual_Stack_Slices</A>
  * 
- * @version 11/30/2009
  * @author Ignacio Arganda-Carreras (ignacio.arganda@gmail.com), Stephan Saalfeld and Albert Cardona
  */
 public class Transform_Virtual_Stack_MT implements PlugIn 
