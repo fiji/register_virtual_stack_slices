@@ -1,7 +1,8 @@
 register_virtual_stack_slices
 =============================
+Package for registering/transforming large sequences of 2D images. It contains two plugins: [Register Virtual Stack Slices](http://fiji.sc/Register_Virtual_Stack_Slices) and [Transform Virtual Stack Slices](http://fiji.sc/Transform_Virtual_Stack_Slices).
 
-This plugin takes a sequence of image slices stored in a folder, and delivers a list of registered image slices (with enlarged canvas). One of the images in the sequence can be selected by the user as reference and it will remain intact.
+[Register Virtual Stack Slices](http://fiji.sc/Register_Virtual_Stack_Slices) takes a sequence of image slices stored in a folder, and delivers a list of registered image slices (with enlarged canvas). One of the images in the sequence can be selected by the user as reference and it will remain intact.
 
 The plugin can perform 6 types of image registration techniques:
 
@@ -15,3 +16,5 @@ The plugin can perform 6 types of image registration techniques:
 All models are aided by automatically extracted SIFT features.
 
 For further details, visit the documentation site: http://fiji.sc/Register_Virtual_Stack_Slices
+
+[Transform Virtual Stack Slices](http://fiji.sc/Transform_Virtual_Stack_Slices) allows you to apply the transforms calculated by [Register Virtual Stack Slices](http://fiji.sc/Register_Virtual_Stack_Slices) to the same or another set of images.
