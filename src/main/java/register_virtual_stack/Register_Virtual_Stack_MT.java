@@ -24,6 +24,8 @@ import ij.process.ImageProcessor;
 import io.DM3_Reader;
 
 import java.awt.Color;
+import java.awt.FileDialog;
+import java.awt.Frame;
 import java.awt.Rectangle;
 import java.awt.TextField;
 import java.awt.geom.AffineTransform;
@@ -255,15 +257,26 @@ public class Register_Virtual_Stack_MT implements PlugIn
 		// Select reference
 		String referenceName = null;						
 		if(non_shrinkage == false)
-		{		
-			JFileChooser chooser = new JFileChooser(source_dir); 
-			// Choose reference image
-			chooser.setDialogTitle("Choose reference image");
-			chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-			chooser.setAcceptAllFileFilterUsed(true);
-			if (chooser.showOpenDialog(null) != JFileChooser.APPROVE_OPTION)
-				return;
-			referenceName = chooser.getSelectedFile().getName();
+		{
+			if( Prefs.useJFileChooser )
+			{
+				JFileChooser chooser = new JFileChooser(source_dir);
+				// Choose reference image
+				chooser.setDialogTitle("Choose reference image");
+				chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				chooser.setAcceptAllFileFilterUsed(true);
+				if (chooser.showOpenDialog(null) != JFileChooser.APPROVE_OPTION)
+					return;
+				referenceName = chooser.getSelectedFile().getName();
+			}
+			else // use FileDialog
+			{
+				final FileDialog fd = new FileDialog( ( Frame ) null, "Open",
+						FileDialog.LOAD );
+				fd.setDirectory( source_dir );
+				fd.setVisible( true );
+				referenceName = fd.getFile();
+			}
 		}
 
 
