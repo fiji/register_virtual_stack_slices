@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>register_virtual_stack_slices</artifactId>
-	<version>3.0.1-SNAPSHOT</version>
+	<version>3.0.1</version>
 
 	<name>plugins/register_virtual_stack_slices.jar</name>
 	<description />
@@ -83,7 +83,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/fiji/register_virtual_stack_slices</connection>
 		<developerConnection>scm:git:git@github.com:fiji/register_virtual_stack_slices</developerConnection>
-		<tag>HEAD</tag>
+		<tag>register_virtual_stack_slices-3.0.1</tag>
 		<url>https://github.com/fiji/register_virtual_stack_slices</url>
 	</scm>
 	<issueManagement>
