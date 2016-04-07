@@ -95,10 +95,6 @@
 		<url>http://jenkins.imagej.net/job/register_virtual_stack_slices/</url>
 	</ciManagement>
 
-	<properties>
-		<scijava.jvm.version>1.7</scijava.jvm.version>
-	</properties>
-
 	<repositories>
 		<!-- NB: for project parent -->
 		<repository>
