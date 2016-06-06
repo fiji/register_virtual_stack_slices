@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>register_virtual_stack_slices</artifactId>
-	<version>3.0.1-SNAPSHOT</version>
+	<version>3.0.2-SNAPSHOT</version>
 
 	<name>plugins/register_virtual_stack_slices.jar</name>
 	<description />
@@ -19,8 +19,7 @@
 		<developer>
 			<id>iarganda</id>
 			<name>Ignacio Arganda-Carreras</name>
-			<email>iargandacarreras@gmail.com</email>
-			<url>https://sites.google.com/site/iargandacarreras/</url>
+			<url>http://imagej.net/User:Iarganda</url>
 			<roles>
 				<role>founder</role>
 				<role>lead</role>
@@ -30,31 +29,22 @@
 				<role>support</role>
 				<role>maintainer</role>
 			</roles>
-			<timezone>-6</timezone>
 		</developer>
 		<developer>
 			<id>ctrueden</id>
 			<name>Curtis Rueden</name>
-			<email>ctrueden@wisc.edu</email>
-			<url>http://loci.wisc.edu/people/curtis-rueden</url>
-			<organization>UW-Madison LOCI</organization>
-			<organizationUrl>http://loci.wisc.edu/</organizationUrl>
+			<url>http://imagej.net/User:Rueden</url>
 			<roles>
 				<role>maintainer</role>
 			</roles>
-			<timezone>-6</timezone>
 		</developer>
 		<developer>
 			<id>hinerm</id>
 			<name>Mark Hiner</name>
-			<email>hiner@wisc.edu</email>
-			<url>http://loci.wisc.edu/people/mark-hiner</url>
-			<organization>UW-Madison LOCI</organization>
-			<organizationUrl>http://loci.wisc.edu/</organizationUrl>
+			<url>http://imagej.net/User:Hinerm</url>
 			<roles>
 				<role>maintainer</role>
 			</roles>
-			<timezone>-6</timezone>
 		</developer>
 	</developers>
 	<contributors>
@@ -94,10 +84,6 @@
 		<system>Jenkins</system>
 		<url>http://jenkins.imagej.net/job/register_virtual_stack_slices/</url>
 	</ciManagement>
-
-	<properties>
-		<scijava.jvm.version>1.7</scijava.jvm.version>
-	</properties>
 
 	<repositories>
 		<!-- NB: for project parent -->
