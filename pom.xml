@@ -3,17 +3,31 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>sc.fiji</groupId>
-		<artifactId>pom-fiji</artifactId>
-		<version>21.3.1</version>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>13.2.1</version>
 		<relativePath />
 	</parent>
 
+	<groupId>sc.fiji</groupId>
 	<artifactId>register_virtual_stack_slices</artifactId>
 	<version>3.0.2-SNAPSHOT</version>
 
-	<name>plugins/register_virtual_stack_slices.jar</name>
-	<description />
+	<name>Register Virtual Stack Slices</name>
+	<description>Registers image slices from a sequence of image slices stored in a folder.</description>
+	<url>http://imagej.net/Register_Virtual_Stack_Slices</url>
+	<inceptionYear>2008</inceptionYear>
+	<organization>
+		<name>Fiji</name>
+		<url>http://fiji.sc/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>GNU General Public License v3+</name>
+			<url>http://www.gnu.org/licenses/gpl.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<developers>
 		<developer>
@@ -62,6 +76,13 @@
 		</contributor>
 	</contributors>
 
+	<mailingLists>
+		<mailingList>
+			<name>ImageJ Forum</name>
+			<archive>http://forum.imagej.net/</archive>
+		</mailingList>
+	</mailingLists>
+
 	<scm>
 		<connection>scm:git:git://github.com/fiji/register_virtual_stack_slices</connection>
 		<developerConnection>scm:git:git@github.com:fiji/register_virtual_stack_slices</developerConnection>
@@ -77,6 +98,13 @@
 		<url>http://jenkins.imagej.net/job/register_virtual_stack_slices/</url>
 	</ciManagement>
 
+	<properties>
+		<package-name>register_virtual_stack</package-name>
+		<license.licenseName>gpl_v3</license.licenseName>
+		<license.copyrightOwners>Fiji developers.</license.copyrightOwners>
+		<license.projectName>Fiji distribution of ImageJ for the life sciences.</license.projectName>
+	</properties>
+
 	<repositories>
 		<!-- NB: for project parent -->
 		<repository>
@@ -85,17 +113,6 @@
 		</repository>
 	</repositories>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>pom-trakem2</artifactId>
-				<version>${pom-trakem2.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	<dependencies>
 		<!-- TrakEM2 dependencies -->
 		<dependency>
