@@ -21,7 +21,6 @@
 			<name>Ignacio Arganda-Carreras</name>
 			<url>http://imagej.net/User:Iarganda</url>
 			<roles>
-				<role>founder</role>
 				<role>lead</role>
 				<role>developer</role>
 				<role>debugger</role>
@@ -41,14 +40,15 @@
 	</developers>
 	<contributors>
 		<contributor>
+			<name>Albert Cardona</name>
+			<url>http://imagej.net/User:Albertcardona</url>
+			<roles><role>founder</role></roles>
+			<properties><id>acardona</id></properties>
+		</contributor>
+		<contributor>
 			<name>Johannes Schindelin</name>
 			<url>http://imagej.net/User:Schindelin</url>
 			<properties><id>dscho</id></properties>
-		</contributor>
-		<contributor>
-			<name>Albert Cardona</name>
-			<url>http://imagej.net/User:Albertcardona</url>
-			<properties><id>acardona</id></properties>
 		</contributor>
 		<contributor>
 			<name>Jan Eglinger</name>
