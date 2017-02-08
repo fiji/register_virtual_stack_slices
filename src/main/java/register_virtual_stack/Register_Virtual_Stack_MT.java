@@ -21,7 +21,7 @@ import ij.plugin.PlugIn;
 import ij.process.ByteProcessor;
 import ij.process.ImageProcessor;
 
-import io.DM3_Reader;
+import sc.fiji.io.DM3_Reader;
 
 import java.awt.Color;
 import java.awt.FileDialog;
