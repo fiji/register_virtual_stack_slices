@@ -21,7 +21,7 @@ import ij.plugin.PlugIn;
 import ij.process.ByteProcessor;
 import ij.process.ImageProcessor;
 
-import io.DM3_Reader;
+import sc.fiji.io.DM3_Reader;
 import loci.formats.FormatException;
 import loci.plugins.BF;
 
@@ -67,6 +67,8 @@ import mpicbg.trakem2.transform.SimilarityModel2D;
 import mpicbg.trakem2.transform.TransformMesh;
 import mpicbg.trakem2.transform.TransformMeshMapping;
 import mpicbg.trakem2.transform.TranslationModel2D;
+
+import sc.fiji.io.DM3_Reader;
 
 /** 
  * Fiji plugin to register sequences of images in a concurrent (multi-thread) way.

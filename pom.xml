@@ -3,17 +3,31 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>sc.fiji</groupId>
-		<artifactId>pom-fiji</artifactId>
-		<version>21.3.1</version>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>17.1.1</version>
 		<relativePath />
 	</parent>
 
+	<groupId>sc.fiji</groupId>
 	<artifactId>register_virtual_stack_slices</artifactId>
-	<version>3.0.2-SNAPSHOT</version>
+	<version>3.0.4-SNAPSHOT</version>
 
-	<name>plugins/register_virtual_stack_slices.jar</name>
-	<description />
+	<name>Register Virtual Stack Slices</name>
+	<description>Registers image slices from a sequence of image slices stored in a folder.</description>
+	<url>http://imagej.net/Register_Virtual_Stack_Slices</url>
+	<inceptionYear>2008</inceptionYear>
+	<organization>
+		<name>Fiji</name>
+		<url>http://fiji.sc/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>GNU General Public License v3+</name>
+			<url>http://www.gnu.org/licenses/gpl.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<developers>
 		<developer>
@@ -21,7 +35,6 @@
 			<name>Ignacio Arganda-Carreras</name>
 			<url>http://imagej.net/User:Iarganda</url>
 			<roles>
-				<role>founder</role>
 				<role>lead</role>
 				<role>developer</role>
 				<role>debugger</role>
@@ -41,14 +54,15 @@
 	</developers>
 	<contributors>
 		<contributor>
+			<name>Albert Cardona</name>
+			<url>http://imagej.net/User:Albertcardona</url>
+			<roles><role>founder</role></roles>
+			<properties><id>acardona</id></properties>
+		</contributor>
+		<contributor>
 			<name>Johannes Schindelin</name>
 			<url>http://imagej.net/User:Schindelin</url>
 			<properties><id>dscho</id></properties>
-		</contributor>
-		<contributor>
-			<name>Albert Cardona</name>
-			<url>http://imagej.net/User:Albertcardona</url>
-			<properties><id>acardona</id></properties>
 		</contributor>
 		<contributor>
 			<name>Jan Eglinger</name>
@@ -62,6 +76,13 @@
 		</contributor>
 	</contributors>
 
+	<mailingLists>
+		<mailingList>
+			<name>ImageJ Forum</name>
+			<archive>http://forum.imagej.net/</archive>
+		</mailingList>
+	</mailingLists>
+
 	<scm>
 		<connection>scm:git:git://github.com/fiji/register_virtual_stack_slices</connection>
 		<developerConnection>scm:git:git@github.com:fiji/register_virtual_stack_slices</developerConnection>
@@ -73,34 +94,36 @@
 		<url>https://github.com/fiji/register_virtual_stack_slices/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/register_virtual_stack_slices/</url>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/fiji/register_virtual_stack_slices</url>
 	</ciManagement>
 
+	<properties>
+		<package-name>register_virtual_stack</package-name>
+		<license.licenseName>gpl_v3</license.licenseName>
+		<license.copyrightOwners>Fiji developers.</license.copyrightOwners>
+		<license.projectName>Fiji distribution of ImageJ for the life sciences.</license.projectName>
+
+		<!-- NB: Deploy releases to the ImageJ Maven repository. -->
+		<releaseProfiles>deploy-to-imagej</releaseProfiles>
+	</properties>
+
 	<repositories>
-		<!-- NB: for project parent -->
 		<repository>
 			<id>imagej.public</id>
 			<url>http://maven.imagej.net/content/groups/public</url>
 		</repository>
 	</repositories>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>pom-trakem2</artifactId>
-				<version>${pom-trakem2.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	<dependencies>
 		<!-- TrakEM2 dependencies -->
 		<dependency>
 			<groupId>sc.fiji</groupId>
 			<artifactId>TrakEM2_</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>trakem2-transform</artifactId>
 		</dependency>
 
 		<!-- Fiji dependencies -->
@@ -115,10 +138,6 @@
 		<dependency>
 			<groupId>sc.fiji</groupId>
 			<artifactId>fiji-lib</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>sc.fiji</groupId>
-			<artifactId>mpicbg-trakem2</artifactId>
 		</dependency>
 
 		<!-- ImageJ dependencies -->
