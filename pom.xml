@@ -152,6 +152,19 @@
 		<dependency>
 			<groupId>ome</groupId>
 			<artifactId>bio-formats_plugins</artifactId>
+			<exclusions>
+				<exclusion>
+					<!-- NB: Exclude problematic uber-JAR that bundles commons-io. -->
+					<groupId>ch.systems.cisd</groupId>
+					<artifactId>jhdf5</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<!-- NB: Needed by Bio-Formats. -->
+			<groupId>cisd</groupId>
+			<artifactId>jhdf5</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 </project>
