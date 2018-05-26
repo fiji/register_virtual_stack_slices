@@ -11,7 +11,7 @@
 
 	<groupId>sc.fiji</groupId>
 	<artifactId>register_virtual_stack_slices</artifactId>
-	<version>3.0.5-SNAPSHOT</version>
+	<version>3.0.5</version>
 
 	<name>Register Virtual Stack Slices</name>
 	<description>Registers image slices from a sequence of image slices stored in a folder.</description>
@@ -86,7 +86,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/fiji/register_virtual_stack_slices</connection>
 		<developerConnection>scm:git:git@github.com:fiji/register_virtual_stack_slices</developerConnection>
-		<tag>HEAD</tag>
+		<tag>register_virtual_stack_slices-3.0.5</tag>
 		<url>https://github.com/fiji/register_virtual_stack_slices</url>
 	</scm>
 	<issueManagement>
