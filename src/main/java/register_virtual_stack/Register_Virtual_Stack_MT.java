@@ -68,7 +68,6 @@ import mpicbg.trakem2.transform.TransformMesh;
 import mpicbg.trakem2.transform.TransformMeshMapping;
 import mpicbg.trakem2.transform.TranslationModel2D;
 
-import sc.fiji.io.DM3_Reader;
 
 /** 
  * Fiji plugin to register sequences of images in a concurrent (multi-thread) way.
