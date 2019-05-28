@@ -995,7 +995,6 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			try{
 				IJ.showStatus("Applying transform " + (ind+1) + "/" + sorted_file_names.length);
 				saved_file = it.next().get();
-				it.remove(); // so list doesn't build up anywhere with Callable-s that have been called already.				
 				System.gc();
 			} catch (InterruptedException e) {
 				IJ.error("Interruption exception!");
@@ -1077,7 +1076,6 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			try {
 				IJ.showStatus("Resizing image " + (ind+1) + "/" + sorted_file_names.length);
 				filename = it1.next().get();
-				it1.remove(); // so list doesn't build up anywhere with Callable-s that have been called already.
 				System.gc();
 			} catch (InterruptedException e) {
 				IJ.error("Interruption exception!");
