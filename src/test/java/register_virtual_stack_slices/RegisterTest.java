@@ -3,6 +3,9 @@ package register_virtual_stack_slices;
 import ij.ImageJ;
 import register_virtual_stack.Register_Virtual_Stack_MT;
 
+/**
+ * Test class for debugging plugin.
+ */
 public class RegisterTest {
 
 	/**
