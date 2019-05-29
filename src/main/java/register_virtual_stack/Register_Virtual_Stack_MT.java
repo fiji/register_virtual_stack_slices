@@ -1215,7 +1215,7 @@ public class Register_Virtual_Stack_MT implements PlugIn
 			boundsFor.add(new Rectangle(0, 0, imp2.getWidth(), imp2.getHeight()));
 			
 			// Save the reference image, untouched:
-			exe.submit(saveImage(imp2, makeTargetPath(target_dir, sorted_file_names[referenceIndex])));
+			new FileSaver(imp2).saveAsTiff(makeTargetPath(target_dir, sorted_file_names[referenceIndex]));
 
 			// Array of resulting coordinate transforms
 			CoordinateTransform[] transform = new CoordinateTransform[sorted_file_names.length];
@@ -1892,7 +1892,7 @@ public class Register_Virtual_Stack_MT implements PlugIn
 		commonBounds.height = max_y - min_y;
 		
 		// Save target image
-		exe.submit(saveImage(imp2, makeTargetPath(target_dir, sorted_file_names[i])));		
+		new FileSaver(imp2).saveAsTiff(makeTargetPath(target_dir, sorted_file_names[i]));
 		return true;
 	} //end method register
 	
