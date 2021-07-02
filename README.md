@@ -1,3 +1,5 @@
+[![](https://github.com/fiji/register_virtual_stack_slices/actions/workflows/build-main.yml/badge.svg)](https://github.com/fiji/register_virtual_stack_slices/actions/workflows/build-main.yml)
+
 register_virtual_stack_slices
 =============================
 Package for registering/transforming large sequences of 2D images. It contains two plugins: [Register Virtual Stack Slices](http://fiji.sc/Register_Virtual_Stack_Slices) and [Transform Virtual Stack Slices](http://fiji.sc/Transform_Virtual_Stack_Slices).
