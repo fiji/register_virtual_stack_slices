@@ -1,4 +1,4 @@
-[![](https://github.com/fiji/register_virtual_stack_slices/actions/workflows/build-main.yml/badge.svg)](https://github.com/fiji/register_virtual_stack_slices/actions/workflows/build-main.yml)
+[![Build Status](https://github.com/fiji/register_virtual_stack_slices/actions/workflows/build.yml/badge.svg)](https://github.com/fiji/register_virtual_stack_slices/actions/workflows/build.yml)
 
 register_virtual_stack_slices
 =============================
